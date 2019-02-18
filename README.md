@@ -1,6 +1,6 @@
 # finaani.github.io
 Metier
-# My Name
+# Noor Bondogji
 
 ### I am an artist. Welcome, this is my portfolio site.
 
