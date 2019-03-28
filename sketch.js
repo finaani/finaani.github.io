@@ -1,4 +1,4 @@
-let angle = 0;
+/*let angle = 0;
 
 function setup() {
   createCanvas(710, 400);
@@ -22,4 +22,4 @@ function draw() {
     fill(255);
     ellipse(mouseX, mouseY, 2, 2);
   }
-}
+}*/
