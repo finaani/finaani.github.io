@@ -15,4 +15,15 @@ function mousePressed() {
     song.play();
     background(0, 255, 0);
   }
+
+}
+
+function preload() {
+  soundFormats('mp3', 'ogg');
+  mySound = loadSound('assets/lucky_dragons_-_power_melody.mp3');
+}
+
+function setup() {
+  mySound.setVolume(0.1);
+  mySound.play();
 }
