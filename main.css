@@ -49,24 +49,6 @@ h1 {
   font-weight: 300;
 }
 
-/*slideshow*/
-
-* {margin: 0; padding: 0;}
-body
-
-.slider{
-	width: 640px; /*Same as width of the large image*/
-	position: relative;
-	/*Instead of height we will use padding*/
-	padding-top: 320px; /*That helps bring the labels down*/
-
-	margin: 100px auto;
-
-	/*Lets add a shadow*/
-	box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.75);
-}
-
-/* name logo rotate */
 .container {
   width: 140px;
   margin: 0 auto;
@@ -212,6 +194,23 @@ h1 {
   100% {
     opacity: 0.2;
   }
+}
+
+/*slideshow*/
+
+* {margin: 0; padding: 0;}
+body
+
+.slider{
+	width: 640px; /*Same as width of the large image*/
+	position: relative;
+	/*Instead of height we will use padding*/
+	padding-top: 320px; /*That helps bring the labels down*/
+
+	margin: 100px auto;
+
+	/*Lets add a shadow*/
+	box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.75);
 }
 
 
