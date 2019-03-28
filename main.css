@@ -49,75 +49,9 @@ h1 {
   font-weight: 300;
 }
 
-body{
-  height:100vh;
-  margin:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-div{
-  width:40vmin;
-  height:40vmin;
-  background: url(http://www.placecage.com/500/500) center / cover;
-}
-
-/* rotating slide */
-.fade-container {
-  position: relative;
-}
-
-.fade-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 300px;
-}
-
-@keyframes fade {
-  0% {
-    opacity: 0; }
-  4% {
-    opacity: 1; }
-  21% {
-    opacity: 1; }
-  25% {
-    opacity: 0;
-    -webkit-animation-delay: 9s;
-    animation-delay: 9s; }
-  100% {
-    opacity: 0;
-    -webkit-animation-delay: 9s;
-    animation-delay: 9s; }
-}
-
-
-.fade-img:nth-child(1) {
-  animation: fade 12s ease-in-out infinite;
-}
-
-.fade-img:nth-child(2) {
-  animation: fade 12s ease-in-out infinite;
-  animation-delay: 3s;
-  opacity: 0;
-}
-
-.fade-img:nth-child(3) {
-  animation: fade 12s ease-in-out infinite;
-  animation-delay: 6s;
-  opacity: 0;
-}
-.fade-img:nth-child(4) {
-  animation: fade 12s ease-in-out infinite;
-  animation-delay: 9s;
-  opacity: 0;
-}
-
-
-
 /*slideshow*/
 
- * {margin: 0; padding: 0;}
+* {margin: 0; padding: 0;}
 body
 
 .slider{
@@ -134,7 +68,7 @@ body
 
 
 /*Last thing remaining is to add transitions*/
- .slider>img{
+.slider>img{
 	position: absolute;
 	left: 0; top: 0;
 	transition: all 0.5s;
@@ -162,7 +96,7 @@ body
 }
 
 /*Time to add the click effects*/
- .slider input[name='slide_switch']:checked+label {
+.slider input[name='slide_switch']:checked+label {
 	border-color: #666;
 	opacity: 1;
 }
