@@ -6,7 +6,7 @@ function setup() {
   background(255, 0, 0);
 }
 
-function mousePressed() {
+/*function mousePressed() {
   if (song.isPlaying()) {
     // .isPlaying() returns a boolean
     song.stop();
@@ -16,7 +16,7 @@ function mousePressed() {
     background(0, 255, 0);
   }
 
-}
+}*/
 
 function preload() {
   soundFormats('mp3', 'ogg');
