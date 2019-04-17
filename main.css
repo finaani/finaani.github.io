@@ -49,16 +49,19 @@ h1 {
   text-align: center;
   font-weight: 300;
 }
+
+
 /* carasoul slides */
-body {
+/* body {
   background: #E8D5B7;
   text-align: center;
   font-family: sans-serif;
   color: #FC3A51;
 }
 .container {
+
   /* position: relative; */
-  width: 320px;
+  /*width: 320px;
   margin: 100px auto 0 auto;
 }
 
@@ -125,7 +128,9 @@ span {
     transform: rotateY(-360deg);
   }
 }
+
 /* carasoul ends */
+
 
 
 
