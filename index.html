@@ -166,116 +166,30 @@
         <br><br>
 
 
-
-          <!-- <button onclick="myFunction()">Click to toggle</button> -->
-          <div id="myDIV">Chek out my Sketch. <span class="subtext"><!-- geometric artwork -->
-
-          <div id="interactive-object">
-
-            <script src="http://threejsplaygnd.brangerbriz.net/js/three.min.js"></script>
-            <script src="http://threejsplaygnd.brangerbriz.net/js/Detector.js"></script>
-
-            <script>
-              if (!Detector.webgl) Detector.addGetWebGLMessage();
-
-              var camera, scene, renderer;
-              var geometry, material, mesh;
-
-
-              function setup() {
-
-                var W = window.innerWidth,
-                  H = window.innerHeight;
-                renderer = new THREE.WebGLRenderer({
-                  preserveDrawingBuffer: true
-                });
-                renderer.autoClearColor = false;
-                THREE.WebGLRenderer();
-                renderer.setSize(W, H);
-                document.body.appendChild(renderer.domElement);
-
-                camera = new THREE.PerspectiveCamera(50, W / H, 1, 10000);
-                camera.position.z = 500;
-
-                scene = new THREE.Scene();
-
-
-
-
-                // paste your code from the geometryGUI here
-                geometry = new THREE.TorusKnotGeometry(100, 40, 64, 8, 2, 3, 1);
-                material = new THREE.MeshNormalMaterial({
-                  shading: THREE.FlatShading
-                });
-                mesh = new THREE.Mesh(geometry, material);
-                mesh.scale.x = mesh.scale.y = mesh.scale.z = 0.69;
-                mesh.rotation.z = 1.76;
-                scene.add(mesh);
-
-              }
-
-              function draw() {
-
-                requestAnimationFrame(draw);
-
-
-
-                mesh.position.x = Math.sin(Date.now() * 0.001) * 50;
-                mesh.rotation.z = Date.now() * 0.0005;
-
-                mesh.rotation.x = Date.now() * 0.0005;
-                mesh.rotation.y = Date.now() * 0.0002;
-                mesh.rotation.z = Date.now() * 0.001;
-
-                camera.position.x = Math.sin(Date.now() * 0.002) * 50;
-
-
-                renderer.render(scene, camera);
-
-              }
-
-
-
-              setup();
-              draw();
-            </script></div>
-            <!-- end of geo artwork -->
-
-<!-- carousel slider -->
-            <div class="container">
-              <div class="carousel">
-                <div class="carousel__face"><span>Digital Art is something</span></div>
-                <div class="carousel__face"><span>Very special</span></div>
-                <div class="carousel__face"><span>Create your element</span></div>
-                <div class="carousel__face"><span>For you</span></div>
-                <div class="carousel__face"><span>Just give it go!</span></div>
-                <div class="carousel__face"><span>Take a spin</span></div>
-                <div class="carousel__face"><span>And see</span></div>
-                <div class="carousel__face"><span>You bring things to life</span></div>
-                <div class="carousel__face"><span>Just Try!</span></div>
-              </div>
-            </div>
-
-          </div>
-
-          </center>
-
 <!-- <span class="subtext"></span> -->
 <!-- toggle button -->
           <!-- <button class="btn1">Surprise</button> -->
 
           <!-- <button class="btn2">Hide</button> -->
 
+          <span class="subtext"></span>
 
+          <!-- carousel slider -->
+                      <div class="container">
+                        <div class="carousel">
+                          <div class="carousel__face"><span>Digital Art is something</span></div>
+                          <div class="carousel__face"><span>Very special</span></div>
+                          <div class="carousel__face"><span>Create your element</span></div>
+                          <div class="carousel__face"><span>For you</span></div>
+                          <div class="carousel__face"><span>Just give it go!</span></div>
+                          <div class="carousel__face"><span>Take a spin</span></div>
+                          <div class="carousel__face"><span>And see</span></div>
+                          <div class="carousel__face"><span>You bring things to life</span></div>
+                          <div class="carousel__face"><span>Just Try!</span></div>
+                        </div>
+                      </div>
 
-        <!-- We will use PrefixFree - a script that takes care of CSS3 vendor prefixes
-You can download it from http://leaverou.github.com/prefixfree/ -->
-        <script src="http://thecodeplayer.com/uploads/js/prefixfree.js" type="text/javascript"></script>
-
-      </div>
-
-    </div>
-    </div>
+                    </div>
 
 
   </section>
