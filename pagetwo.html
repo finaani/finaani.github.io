@@ -17,7 +17,7 @@
 
   </script>
 
-<script src="geoSketch.js"></script>
+  <script src="geoSketch.js"></script>
 
   <script src="sketch.js">
 
@@ -26,15 +26,15 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
   <script>
-    $(document).ready(function(){
-  $(".btn1").click(function(){
-    $("#myDIV").slideUp();
-  });
-  $(".btn2").click(function(){
-    $("#myDIV").slideDown();
-  });
-});
-</script>
+    $(document).ready(function() {
+      $(".btn1").click(function() {
+        $("#myDIV").slideUp();
+      });
+      $(".btn2").click(function() {
+        $("#myDIV").slideDown();
+      });
+    });
+  </script>
   <meta charset="utf-8">
 
 
@@ -42,53 +42,57 @@
 
 <body>
   <div id="rugBackground"></div>
-    <!-- container -->
-    <div id="rugMainBody">
+  <!-- container -->
+  <div id="rugMainBody">
     <div id="titleCard">
-    <div class="jaggedShape1"></div>
-    <div class="jaggedShape2"></div>
-    <div class="jaggedShape3"></div>
-    <div class="jaggedShape4"></div>
-    <div class="jaggedShape5"></div>
+      <div class="jaggedShape1"></div>
+      <div class="jaggedShape2"></div>
+      <div class="jaggedShape3"></div>
+      <div class="jaggedShape4"></div>
+      <div class="jaggedShape5"></div>
     </div>
-     <!-- lays on top of titleCard -->
+    <!-- lays on top of titleCard -->
     <div id="titleCardblock">
-    <div class="jaggedShape1B"></div>
-    <div class="jaggedShape2B"></div>
-    <div class="jaggedShape3B"></div>
-    <div class="jaggedShape4B"></div>
-    <div class="jaggedShape5B"></div>
+      <div class="jaggedShape1B"></div>
+      <div class="jaggedShape2B"></div>
+      <div class="jaggedShape3B"></div>
+      <div class="jaggedShape4B"></div>
+      <div class="jaggedShape5B"></div>
     </div>
 
-      <div class="mainBackground">
-        <h1>SURRRPRISE!</h1>
+    <div class="mainBackground">
+      <a href="pagethree.html" target="_blank">distraction</a>
+      <h1>SURRRPRISE!</h1>
+      <!-- Create art page for page 3 -->
+
+      <a href="pagethree.html" target="_blank"><center>me</a>
+
     </div>
 
-<script>
+    <script>
+      //sample background images by zabbyallen.com
 
+      var images = [
+        "http://res.cloudinary.com/spoiledkidneybeans-squarespace-com/image/upload/v1500576529/pinkSliderbg_noaplt.png",
+        "http://res.cloudinary.com/spoiledkidneybeans-squarespace-com/image/upload/a_hflip/a_0/v1500576517/greenSliderbg_oajxnz.png",
+        "http://res.cloudinary.com/spoiledkidneybeans-squarespace-com/image/upload/v1500576499/beaBG1_padkuu.png",
+        "http://res.cloudinary.com/spoiledkidneybeans-squarespace-com/image/upload/a_hflip/a_0/v1500576517/greenSliderbg_oajxnz.png"
+      ]
 
-//sample background images by zabbyallen.com
+      var rugImages = document.getElementById("rugBackground");
 
-var images = [
-"http://res.cloudinary.com/spoiledkidneybeans-squarespace-com/image/upload/v1500576529/pinkSliderbg_noaplt.png",
-"http://res.cloudinary.com/spoiledkidneybeans-squarespace-com/image/upload/a_hflip/a_0/v1500576517/greenSliderbg_oajxnz.png",
-"http://res.cloudinary.com/spoiledkidneybeans-squarespace-com/image/upload/v1500576499/beaBG1_padkuu.png",
-"http://res.cloudinary.com/spoiledkidneybeans-squarespace-com/image/upload/a_hflip/a_0/v1500576517/greenSliderbg_oajxnz.png"]
-
-    var rugImages = document.getElementById("rugBackground");
-
-    var i = 0;
+      var i = 0;
 
       setInterval(function() {
-      rugImages.style.backgroundImage = "url(" + images[i] + ")";
-      i = i + 1;
-      if (i == images.length) {
-        i =  0;
-      }
+        rugImages.style.backgroundImage = "url(" + images[i] + ")";
+        i = i + 1;
+        if (i == images.length) {
+          i = 0;
+        }
       }, 250); //seconds in ms
+    </script>
 
 
-</script>
 
 </body>
 

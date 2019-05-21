@@ -1,0 +1,140 @@
+html, body, main{
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
+main{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+#piece{
+  box-shadow: 0 0 20px 0 rgba(0,0,0,0.25);
+  cursor: pointer;
+  height: 60vh;
+  max-height: 960px;
+  position: relative;
+  width: calc(65vh * 0.774);
+}
+
+#frame{
+  background: url(https://png2.kisspng.com/sh/713593a7bf3a3e0ab66122edd67e946d/L0KzQYm3VMA0N5J0j5H0aYP2gLBuTgBqa6V6itc2ZoLkfbb6TfdwdJUyjtt3dHHqdX7qjP91cJpzf598dHBme373iP91d5h3RehyboTkd7a0hwJidZYyTdNsNELpcre3UcdiPGYzTqs9MkO2QIa4VcIzQGE7T6MEMEC5QXB3jvc=/kisspng-picture-frames-gold-vintage-clothing-stock-photogr-vintage-frame-5ac42fbf017a45.6942330515228067190061.png);
+  background-size: cover;
+  height: calc(36vh * 0.70);
+  left: 30%;
+  position: absolute;
+  top: 30.5%;
+  width: calc(40.5vh * 0.774 * 0.617)
+}
+
+#holder{
+  background: url(https://static.wixstatic.com/media/7ae286_e3ddd5b072a94684b6d60fa0a0b8b00d~mv2_d_2896_4096_s_4_2.jpg/v1/fill/w_1136,h_1612,al_c,q_85,usm_0.66_1.00_0.01/7ae286_e3ddd5b072a94684b6d60fa0a0b8b00d~mv2_d_2896_4096_s_4_2.webp);
+  background-size: cover;
+  height: calc(36vh * 0.70);
+  left: 30%;
+  position: absolute;
+  top: 30.5%;
+  width: calc(40.5vh * 0.774 * 0.617)
+
+}
+
+#painting{
+  height: 100%;
+  position: absolute;
+  transform: translateY(0%);
+  /*width: 100%;*/
+}
+
+/* insert art pic position */
+#original, .shred{
+  background: url(https://66.media.tumblr.com/13420342767f3fdd1b1a5838a0d33bf8/tumblr_pknginAkfC1qh1c3so1_1280.pnj);
+  background-size: cover;
+  height: calc(36vh * 0.70);
+  left: 30%;
+  position: absolute;
+  top: 30.5%;
+  width: calc(40vh * 0.774 * 0.617)
+
+}
+
+
+#original{
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+#shredded{
+  bottom: 0;
+  display: grid;
+  grid-column-gap: 4px;
+  grid-template-columns: repeat(11, 1fr);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+#shredded .shred{
+  background-position: top center;
+}
+
+#shredded .shred:nth-child(1){
+  background-position: 0% 0%;
+}
+
+#shredded .shred:nth-child(2){
+  background-position: 10% 0%;
+}
+
+#shredded .shred:nth-child(3){
+  background-position: 20% 0%;
+}
+
+#shredded .shred:nth-child(4){
+  background-position: 30% 0%;
+}
+
+#shredded .shred:nth-child(5){
+  background-position: 40% 0%;
+}
+
+#shredded .shred:nth-child(6){
+  background-position: 50% 0%;
+}
+
+#shredded .shred:nth-child(7){
+  background-position: 60% 0%;
+}
+
+#shredded .shred:nth-child(8){
+  background-position: 70% 0%;
+}
+
+#shredded .shred:nth-child(9){
+  background-position: 80% 0%;
+}
+
+#shredded .shred:nth-child(10){
+  background-position: 90% 0%;
+}
+
+#shredded .shred:nth-child(11){
+  background-position: 100% 0%;
+}
+
+input{
+  display: none;
+}
+
+header{
+  position: absolute;
+  top: 2em;
+}
+
+header a{
+  color: black;
+}
