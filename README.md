@@ -1,6 +1,4 @@
-# finaani
-Metier
-# Noor Bondogji
+# finaani - Noor Bondogji
 
 ### I am an artist. Welcome, this is my portfolio site.
 
