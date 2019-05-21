@@ -13,10 +13,11 @@
   <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
   <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display">
 
-  <link rel="stylesheet" href="pt.css">
-  <link rel="stylesheet" href="pthree.css"
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="stylesphere.css">
 
 
+  </script>
 
 <script src="geoSketch.js"></script>
 
@@ -27,52 +28,204 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
   <script>
-
-    <script src="pthree.js"></script>
-
-
-
-
-</script>
-
-  </script>
+    $(document).ready(function(){
+  $(".btn1").click(function(){
+    $("#myDIV").slideUp();
+  });
+  $(".btn2").click(function(){
+    $("#myDIV").slideDown();
+  });
+});
 </script>
   <meta charset="utf-8">
+
+<div id="interactive-object"></div>
+
+
+
+
+<div id="interactive-object"></div>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r58/three.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineLite.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/easing/EasePack.min.js'></script>
+
+
+
+  <script  src="js/index.js"></script>
+
+<!-- sphero js -->
+<script>
+  (function() {
+    'use strict';
+
+    var renderer = getRenderer(),
+        camera   = new THREE.PerspectiveCamera(60,1,0.1,10000),
+        scene    = new THREE.Scene(),
+        prevX,
+        oGeometry,
+        mesh,
+        timeline;
+
+    var ROTATION_RATE        = 300,
+        DEFORMATION_STRENGTH = 20;
+
+    function init() {
+      var L1,
+          L2;
+
+      document.getElementById('interactive-object').appendChild(renderer.domElement);
+
+      camera.position.z = 200;
+      scene.add(camera);
+      renderer.setSize(200,200);
+
+      L1 = new THREE.PointLight( 0xffffff, 1);
+      L1.position.set(100, 100, 100);
+      scene.add(L1);
+
+      L2 = new THREE.PointLight( 0xffffff, 0.8);
+      L2.position.set(-100, 50, 200);
+      scene.add(L2);
+
+      mesh = createMesh();
+      mesh.dynamic = true;
+      mesh.rotation.z = 1;
+
+      oGeometry = mesh.geometry.clone();
+
+      scene.add(mesh);
+
+      document.addEventListener('mousemove', mutate, false);
+
+      TweenLite.ticker.addEventListener("tick", render);
+      setupTweens();
+    }
+
+    function render() {
+      renderer.render(scene, camera);
+      mesh.geometry.verticesNeedUpdate = true;
+    }
+
+    function mutate(e) {
+      if (!prevX) {
+        prevX = e.clientX;
+        return;
+      }
+
+      mesh.rotation.y -= (prevX - e.clientX)/ROTATION_RATE;
+      timeline.progress(e.clientY/window.innerHeight);
+
+      prevX = e.clientX;
+    }
+
+    function hasWebGL() {
+      return (function () {
+        try {
+          var canvas = document.createElement('canvas');
+          return !! window.WebGLRenderingContext
+            && (canvas.getContext('webgl')
+            || canvas.getContext('experimental-webgl'));
+        } catch(e) { return false; }
+      })();
+    }
+
+    function getRenderer() {
+      return hasWebGL() ?
+        new THREE.WebGLRenderer({ antialias: true, alpha: true })
+          :
+        new THREE.CanvasRenderer({ antialias: true, alpha: true });
+    }
+
+    function createMesh() {
+      return new THREE.Mesh(
+        new THREE.IcosahedronGeometry(75,1),
+        new THREE.MeshPhongMaterial({
+          color      : new THREE.Color(0x3ce8a9),
+          emissive   : new THREE.Color(0x1414cb),
+          specular   : new THREE.Color(0xff9bff),
+          shininess  : 10,
+          shading    : THREE.FlatShading,
+          transparent: 1,
+          opacity    : 1,
+          overdraw   : true
+        })
+      );
+    }
+
+    function setupTweens() {
+      var tweens = [];
+
+      timeline = new TimelineLite();
+
+      for(var i = 0; i < mesh.geometry.vertices.length; i++) {
+        tweens.push( new TweenLite.to(mesh.geometry.vertices[i], 1, {
+          x: oGeometry.vertices[i].x + (Math.random(0,1) * 2 - 1)*DEFORMATION_STRENGTH,
+          y: oGeometry.vertices[i].y + (Math.random(0,1) * 2 - 1)*DEFORMATION_STRENGTH,
+          z: oGeometry.vertices[i].z + (Math.random(0,1) * 2 - 1)*DEFORMATION_STRENGTH
+        }));
+      }
+
+      timeline.insertMultiple(tweens)
+      timeline.pause();
+    }
+
+    init();
+    render();
+
+  })();
+
+</script>
+<!-- end js -->
+
+
+
+
+
 
 
 </head>
 
-<body>
+<<body>
 
-<!-- Create art page for page 3 -->
-<main id="banksy">
-    <header>
-      <a href="http://www.random-art.org/online/" target="blank">Read You</a>
-    </header>
 
-    <div id="piece" @click="$refs.art.click()">
-      <div id="holder">
-        <div id="painting">
-          <div id="shredded">
-          <div class="shred"></div>
-          <div class="shred side ways"></div>
-          <div class="shred"></div>
-          <div class="shred"></div>
-          <div class="shred"></div>
-          <div class="shred"></div>
-          <div class="shred"></div>
-          <div class="shred"></div>
-          <div class="shred"></div>
-          <div class="shred"></div>
-          <div class="shred"></div>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-below">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9">
+          Coded by <a href="https://mail.google.com/mail/u/0/#compose">Noor Bondogji</a><br>
+          &copy; 2017|Noor Bondogji
         </div>
-          <div id="original"></div>
+        <div class="col-md-3">
+          <ul class="list-inline">
+            <li>
+              <a href="https://www.facebook.com/noorbondogji/" target="_blank" class="btn-social"><i class="fa fa-fw fa-facebook"></i></a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/noorbondogji/" target="_blank" class="btn-social"><i class="fa fa-fw fa-linkedin"></i></a>
+            </li>
+            <li>
+              <a href="https://github.com/finaani.github.io" target="_blank" class="btn-social"><i class="fa fa-fw fa-github"></i></a>
+            </li>
+
+            <li>
+              <a href="https://www.instagram.com/noorbondogji/" target="_blank" class="btn-social"><i class="fa fa-fw fa-instagram"></i></a>
+            </li>
+          </ul>
+
+
         </div>
       </div>
-    <div id="frame"></div>
+    </div>
   </div>
-  <input ref="art" type="file" accept="image/*" @change="artSelected">
-</main>
+
+
+</footer>
+
+
 
 </body>
 
